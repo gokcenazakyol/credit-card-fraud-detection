@@ -51,3 +51,41 @@
 - The algorithm of random forest itself should be improved. For example, the voting mechanism
 assumes that each of base classifiers has equal weight, but some of them may be more important than others. Therefore, we also try to make some improvement for this algorithm.
 -------------------------------------------------------------------
+## [AdaBoost and Majority Voting for Credit Card Fraud Detection](https://github.com/gokcenazakyol/credit-card-fraud-detection/blob/main/Literature%20Review/Credit_Card_Fraud_Detection_Using_AdaBoost_and_Majority_Voting.pdf)
+### Abstract
+- Credit card fraud is a serious problem in financial services. There is a lack of research studies on analyzing real-world credit card data owing to confidentiality issues. In this paper, machine learning algorithms are used to detect credit card fraud. Standard models are first used. Then, hybrid methods which use AdaBoost and majority voting methods are applied. The experimental results positively indicate that the majority voting method achieves good accuracy rates in detecting fraud cases in credit cards.
+  
+### Introduction
+- Fraud is a wrongful or criminal deception aimed to bring financial or personal gain. Fraud detection is needed when a fraudulent transaction is attempted by a fraudster.
+### Machine Learning Methods
+- Sayfa 4'ün başında güzel bir tablo var, onu kullanabiliriz.
+#### Majority Voting
+- Majority voting is frequently used in data classification, which involves a combined model with at least two algorithms. Each algorithm makes its own prediction for every test sample. The final output is for the one that receives the majority of the votes.
+#### AdaBoost
+- Adaptive Boosting or AdaBoost is used in conjunction with different types of algorithms to improve their performance. The outputs are combined by using a weighted sum, which represents the combined output of the boosted classifier.
+- AdaBoost tweaks weak learners in favor of misclassified data samples. It is, however, sensitive to noise and outliers. As long as the classifier performance is not random, AdaBoost is able to improve the individual results from different algorithms.
+
+### Experiments
+#### Experimental Setup
+- In the credit card data set, the number of fraudulent transactions is usually a very small as compared with the total number of transactions. With a skewed data set, the resulting accuracy does not present an accurate representation of the system performance. As such, under-sampling is used in this paper to handle the skewed data set.
+- While there is no best way of describing the true and falsepositives and negatives using one indicator, the best general measure is the Matthews Correlation Coefficient (MCC). It is a balanced measure, even when the classes are from different sizes.
+#### Benchmark Data
+- A publicly available data set containing a total of 284,807 transactions made in September 2013 by European cardholders. The data set contains 492 fraud transactions, which is highly imbalanced.
+- Accuracy rates are high, generallya round 99%. This however is not the real outcome, as the rate of fraud detection varies from 32.5% for RT up to 83% for NB. The rate of non-fraud detection is similar to the accuracy rates, i.e., the non-fraud results dominate the accuracy rates. SVM produces the highest MCC score of, while the lowest is from NB.
+- In addition to the standard models, AdaBoost has been used with all 12 models. Accuracy and non-fraud detection rates
+are similar to those without AdaBoost. However, the fraud detection rates increase from 79.8% to 82.3% for SVM. Some models suffer a minor reduction in the fraud detection rate up to 1%. The MCC rates show very minor changes.
+- Based on the models that produce good rates, the majority voting method is applied to the models. The accuracy rates are all above 99%, with DS + GBT yields a perfect non-fraud rate. The best fraud detection rate is achieved by NN + NB at 78.8%. The highest MCC score at 0.823 is yielded by NN + NB, which is higher than those form individual models.
+#### Real World Data
+- A real credit card data set from a financial institution in Malaysia is used in the experiment. It is based on cardholders from the South-East Asia region from February to April 2017. A total of 287,224 transactions are recorded, with 102 of them classified as fraud cases.
+- All accuracy rates are above 99%, with the exception of SVM at 95.5%. The non-fraud detection rates
+of NB, DT, and LIR are at 100%, while the rest are close to perfect, with the exception of SVM. The best MCC rates are from NB, DT, RF, and DS, at 0.990. The fraud detection rates vary from 7.4% for LIR up to 100% for RF, GBT, DS, NN, MLP, and LOR.
+- Similar to the benchmark experiment, AdaBoost has been used with all individual models. The accuracy and non-fraud detection rates are similar to those without AdaBoost. AdaBoost helps improve the fraud detection rates. This clearly indicates the usefulness of AdaBoost in improvement the performance of individual classifiers.
+- The majority voting method is then applied to the same models used in the benchmark experiment. The results of majority voting are better than those of individual models.
+- To further evaluate the robustness of the machine learning algorithms, all real-world data samples are corrupted noise, at 10%, 20% and 30%. Noise is added to all data features. With the addition ofnoise, the fraud detection rate and MCC rates deteriorate, as expected.
+
+### Conclusions
+- The MCC metric has been adopted as a performance measure, as it takes into account the true and false positive and negative predicted outcomes.
+-  A perfect MCC score of 1 has been achieved using AdaBoost and majority voting methods.
+-  To further evaluate the hybrid models, noise from 10% to 30% has been added into the data samples. The majority voting method has yielded the best MCC score. This shows that the majority voting method offers robust performance in the presence of noise.
+- For future work, the methods studied in this paper will be extended to online learning models. In addition, other online
+learning models will be investigated.
