@@ -1,6 +1,6 @@
 # Literature Review Notes
 
-## Random Forest for Credit Card Fraud Detection
+## [Random Forest for Credit Card Fraud Detection](https://github.com/gokcenazakyol/credit-card-fraud-detection/blob/main/Literature%20Review/Random_forest_for_credit_card_fraud_detection.pdf)
 ### Abstract
 - Effictive fraud detection method is important since it can identify a fraud in time when a criminal uses a stolen card to consume. One method is to make full use of the historical transaction data including normal transactions and fraud ones to obtain normal/fraud behavior features based on machine learning techniques, and then utilize these features to check if a transaction is fraud or not. In this paper, two kinds of random forests (They are Random-tree-based random forest and CART-based one, respectively.) are used to train the behavior features of normal and abnormal transactions. We make a comparison of the two random forests which are different in their base classifiers, and analyze their performance on credit fraud detection. The data used in our experiments come from an e-commerce company in China.
 ### Introduction
